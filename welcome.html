@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Welcome ❤️</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body class="welcome-page">
+
+    <div class="stars"></div>
+
+    <div class="welcome-card">
+
+        <h1 id="welcomeTitle"></h1>
+
+        <p id="welcomeMessage"></p>
+
+        <button onclick="enterStory()">
+
+            Enter Our Story ✨
+
+        </button>
+
+    </div>
+
+<script>
+
+const title =
+"For Someone Special ❤️";
+
+const message =
+"A little world made from memories, smiles, and moments we never want to forget.";
+
+let titleIndex = 0;
+
+let messageIndex = 0;
+
+function typeTitle(){
+
+    if(titleIndex < title.length){
+
+        document.getElementById("welcomeTitle").textContent +=
+        title.charAt(titleIndex);
+
+        titleIndex++;
+
+        setTimeout(typeTitle,100);
+
+    }
+
+    else{
+
+        setTimeout(typeMessage,500);
+
+    }
+
+}
+
+function typeMessage(){
+
+    if(messageIndex < message.length){
+
+        document.getElementById("welcomeMessage").textContent +=
+        message.charAt(messageIndex);
+
+        messageIndex++;
+
+        setTimeout(typeMessage,50);
+
+    }
+
+}
+
+function enterStory(){
+
+    // Remember that the user clicked
+    sessionStorage.setItem("musicUnlocked","true");
+
+    // Fade out
+    document.body.style.transition = "opacity 1.5s";
+    document.body.style.opacity = "0";
+
+    // Go to the story page
+    setTimeout(()=>{
+
+        window.location.href = "home.html";
+
+    },1500);
+
+}
+
+window.onload = typeTitle;
+
+</script>
+
+</body>
+</html>

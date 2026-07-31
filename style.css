@@ -1,0 +1,3822 @@
+/* =====================================
+   OUR STORY
+   Login Page
+===================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Segoe UI',sans-serif;
+}
+
+.login-page,
+.welcome-page{
+    overflow:hidden;
+}
+
+.story-page{
+    overflow-x:hidden;
+}
+
+/* ================================
+   NIGHT SKY
+================================ */
+
+.login-page{
+
+    width:100vw;
+    height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+    align-items:center;
+
+    position:relative;
+
+    background:
+    radial-gradient(circle at top,#14213d 0%,#050814 55%,#000000 100%);
+
+}
+
+/* ================================
+   STARS
+================================ */
+
+.stars{
+
+    position:absolute;
+
+    inset:0;
+
+    overflow:hidden;
+
+}
+
+/* Each star created by JavaScript */
+
+.star{
+
+    position:absolute;
+
+    background:white;
+
+    border-radius:50%;
+
+    opacity:.75;
+
+    animation:twinkle infinite ease-in-out;
+
+}
+
+@keyframes twinkle{
+
+    0%,100%{
+
+        opacity:.2;
+        transform:scale(.8);
+
+    }
+
+    50%{
+
+        opacity:1;
+        transform:scale(1.5);
+
+    }
+
+}
+
+/* ================================
+   MOON
+================================ */
+
+.moon{
+
+    position:absolute;
+
+    width:140px;
+    height:140px;
+
+    border-radius:50%;
+
+    top:70px;
+    right:90px;
+
+    background:#f7f2d2;
+
+    box-shadow:
+    0 0 40px #fff4c2,
+    0 0 90px rgba(255,255,220,.35);
+
+}
+
+/* ================================
+   GLASS CARD
+================================ */
+
+.container{
+
+    width:90%;
+    max-width:700px;
+
+    text-align:center;
+
+    padding:50px;
+
+    border-radius:30px;
+
+    background:rgba(255,255,255,.08);
+
+    border:1px solid rgba(255,255,255,.15);
+
+    backdrop-filter:blur(18px);
+
+    z-index:5;
+
+    color:white;
+
+    box-shadow:
+    0 0 40px rgba(255,255,255,.08);
+
+}
+
+/* ================================
+   TEXT
+================================ */
+
+.smallTitle{
+
+    font-size:24px;
+
+    margin-bottom:20px;
+
+    letter-spacing:2px;
+
+    color:#ffe8a3;
+
+}
+
+#typing{
+
+    min-height:150px;
+
+    font-size:48px;
+
+    line-height:1.3;
+
+    text-shadow:0 0 15px white;
+
+}
+
+.description{
+
+    margin-top:20px;
+
+    font-size:20px;
+
+    line-height:1.7;
+
+    opacity:.9;
+
+}
+
+/* ================================
+   LOGIN
+================================ */
+
+#loginBox{
+
+    margin-top:45px;
+
+}
+
+input{
+
+    width:100%;
+
+    padding:18px;
+
+    border:none;
+
+    outline:none;
+
+    border-radius:18px;
+
+    font-size:18px;
+
+    text-align:center;
+
+    margin-bottom:20px;
+
+}
+
+button{
+
+    width:100%;
+
+    padding:18px;
+
+    border:none;
+
+    border-radius:18px;
+
+    font-size:19px;
+
+    cursor:pointer;
+
+    background:white;
+
+    transition:.3s;
+
+}
+
+button:hover{
+
+    transform:translateY(-4px);
+
+    box-shadow:0 0 20px white;
+
+}
+
+#error{
+
+    margin-top:18px;
+
+    color:#ffbcbc;
+
+    font-size:18px;
+
+}
+
+/* ================================
+   MOBILE
+================================ */
+
+@media(max-width:768px){
+
+    .container{
+
+        padding:30px;
+
+    }
+
+    #typing{
+
+        font-size:34px;
+
+        min-height:120px;
+
+    }
+
+    .description{
+
+        font-size:18px;
+
+    }
+
+    .moon{
+
+        width:90px;
+        height:90px;
+
+        right:30px;
+        top:30px;
+
+    }
+
+}
+/* =====================================
+   WELCOME PAGE
+===================================== */
+
+.welcome-page{
+
+    width:100vw;
+
+    height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:
+
+    radial-gradient(
+        circle at center,
+        #182848,
+        #050814 70%
+    );
+
+    overflow:hidden;
+
+    transition:2s;
+
+}
+
+
+/* =====================================
+   WELCOME CARD
+===================================== */
+
+.welcome-card{
+
+    width:90%;
+
+    max-width:700px;
+
+    padding:60px 40px;
+
+    text-align:center;
+
+    color:white;
+
+    background:
+
+    rgba(255,255,255,.08);
+
+    border:
+
+    1px solid rgba(255,255,255,.2);
+
+    backdrop-filter:blur(20px);
+
+    border-radius:35px;
+
+    box-shadow:
+
+    0 0 50px rgba(255,255,255,.15);
+
+    z-index:5;
+
+}
+
+
+/* =====================================
+   TEXT
+===================================== */
+
+#welcomeTitle{
+
+    font-size:55px;
+
+    margin-bottom:30px;
+
+    text-shadow:
+
+    0 0 20px white;
+
+}
+
+
+#welcomeMessage{
+
+    font-size:24px;
+
+    line-height:1.8;
+
+    opacity:.9;
+
+    min-height:90px;
+
+}
+
+
+/* =====================================
+   BUTTON
+===================================== */
+
+.welcome-card button{
+
+    margin-top:45px;
+
+    width:auto;
+
+    padding:
+
+    18px 45px;
+
+
+    border-radius:50px;
+
+    font-size:20px;
+
+    background:white;
+
+    color:#111;
+
+}
+
+
+.welcome-card button:hover{
+
+    box-shadow:
+
+    0 0 30px white;
+
+    transform:translateY(-5px);
+
+}
+
+
+
+/* =====================================
+   MOBILE
+===================================== */
+
+@media(max-width:768px){
+
+
+#welcomeTitle{
+
+    font-size:38px;
+
+}
+
+
+#welcomeMessage{
+
+    font-size:18px;
+
+}
+
+
+}
+/* =====================================
+   STORY PAGE
+===================================== */
+
+.story-page{
+
+    background:
+    radial-gradient(circle at top,#14213d 0%,#050814 60%,#000 100%);
+
+    color:white;
+
+    overflow-x:hidden;
+
+}
+
+/* =====================================
+   HERO
+===================================== */
+
+.hero{
+
+    min-height:100vh;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+    position:relative;
+
+    z-index:5;
+
+    padding:30px;
+
+}
+
+.hero h1{
+
+    font-size:72px;
+
+    text-shadow:0 0 25px white;
+
+    margin-bottom:30px;
+
+}
+
+.hero p{
+
+    font-size:28px;
+
+    line-height:1.8;
+
+    max-width:700px;
+
+}
+
+.scroll{
+
+    margin-top:70px;
+
+    font-size:22px;
+
+    animation:bounce 2s infinite;
+
+}
+
+@keyframes bounce{
+
+    0%,100%{
+
+        transform:translateY(0);
+
+    }
+
+    50%{
+
+        transform:translateY(12px);
+
+    }
+
+}
+/* =====================================
+   PROLOGUE
+===================================== */
+
+.prologue{
+
+    min-height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    padding:60px 20px;
+
+    position:relative;
+
+    z-index:5;
+
+}
+
+.prologue-card{
+
+    width:90%;
+
+    max-width:850px;
+
+    padding:60px;
+
+    text-align:center;
+
+    border-radius:35px;
+
+    background:rgba(255,255,255,.08);
+
+    border:1px solid rgba(255,255,255,.15);
+
+    backdrop-filter:blur(18px);
+
+    box-shadow:0 0 40px rgba(255,255,255,.08);
+
+}
+
+.prologue h2{
+
+    font-size:46px;
+
+    margin-bottom:35px;
+
+    text-shadow:0 0 15px white;
+
+}
+
+.prologue p{
+
+    font-size:26px;
+
+    line-height:2;
+
+    opacity:.95;
+
+}
+/* =====================================
+   SCROLL ANIMATION
+===================================== */
+
+.prologue{
+
+    opacity:0;
+
+    transform:translateY(80px);
+
+    transition:1.2s ease;
+
+}
+
+.prologue.visible{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+}
+/* =====================================
+   CHAPTER
+===================================== */
+
+.chapter{
+
+    min-height:45vh;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+    padding:40px 20px;
+
+}
+
+.chapter h2{
+
+    font-size:50px;
+
+    margin-bottom:20px;
+
+    text-shadow:0 0 15px white;
+
+}
+
+.chapter h3{
+
+    font-size:28px;
+
+    opacity:.85;
+
+}
+
+/* =====================================
+   PREMIUM MEMORY CARDS
+===================================== */
+
+.memory{
+
+    min-height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    padding:80px 20px;
+
+}
+
+.memory-card{
+
+    width:90%;
+
+    max-width:850px;
+
+    padding:45px;
+
+    border-radius:35px;
+
+    text-align:center;
+
+    background:rgba(255,255,255,.08);
+
+    border:1px solid rgba(255,255,255,.15);
+
+    backdrop-filter:blur(18px);
+
+    box-shadow:
+        0 20px 50px rgba(0,0,0,.45),
+        0 0 30px rgba(255,255,255,.08);
+
+    transition:.4s;
+
+}
+
+.memory-card:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:
+        0 25px 60px rgba(0,0,0,.55),
+        0 0 35px rgba(255,255,255,.18);
+
+}
+
+.memory-card img{
+
+    width:320px;
+
+    max-width:100%;
+
+    border-radius:22px;
+
+    border:8px solid white;
+
+    margin-bottom:30px;
+
+    box-shadow:
+        0 12px 35px rgba(0,0,0,.45);
+
+    transition:.4s;
+
+}
+
+.memory-card img:hover{
+
+    transform:scale(1.03);
+
+}
+
+.memory-card h2{
+
+    font-size:36px;
+
+    margin-bottom:25px;
+
+    text-shadow:0 0 12px rgba(255,255,255,.3);
+
+}
+
+.memory-card p{
+
+    font-size:22px;
+
+    line-height:1.9;
+
+    opacity:.95;
+
+}
+
+.quote{
+
+    margin-top:30px;
+
+    font-size:18px;
+
+    font-style:italic;
+
+    color:#ffe8a3;
+
+}
+
+/* =====================================
+   MEMORY ANIMATION
+===================================== */
+
+.memory{
+
+    opacity:0;
+
+    transform:translateY(80px);
+
+    transition:1.2s ease;
+
+}
+
+.memory.visible{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+}
+
+/* =====================================
+   MOBILE
+===================================== */
+
+@media(max-width:768px){
+
+    .memory-card{
+
+        padding:30px;
+
+    }
+
+    .memory-card h2{
+
+        font-size:28px;
+
+    }
+
+    .memory-card p{
+
+        font-size:18px;
+
+    }
+
+    .prologue-card{
+
+        padding:35px;
+
+    }
+
+    .prologue h2{
+
+        font-size:34px;
+
+    }
+
+    .prologue p{
+
+        font-size:20px;
+
+    }
+
+}
+/* =====================================
+   FIX LAYERS
+===================================== */
+
+.stars{
+
+    position:fixed;
+
+    inset:0;
+
+    z-index:0;
+
+    pointer-events:none;
+
+}
+
+.hero,
+.prologue,
+.chapter,
+.memory{
+
+    position:relative;
+
+    z-index:2;
+
+}
+
+.memory-card{
+
+    position:relative;
+
+    z-index:3;
+
+}
+/* =====================================
+   ENDING
+===================================== */
+
+.ending{
+
+    min-height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    padding:40px 20px;
+
+    position:relative;
+
+    z-index:2;
+
+    text-align:center;
+
+}
+
+.ending .prologue-card{
+
+    max-width:800px;
+
+}
+/* =====================================
+   SPECIAL DATE
+===================================== */
+
+.chapter.special-date{
+
+    min-height:100vh;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+    padding:40px 20px;
+
+}
+
+.special-date h2{
+
+    font-size:72px;
+
+    color:#ffe8a3;
+
+    text-shadow:
+        0 0 20px rgba(255,255,255,.6),
+        0 0 40px rgba(255,232,163,.4);
+
+    margin-bottom:30px;
+
+}
+
+.special-date h3{
+
+    font-size:32px;
+
+    font-weight:300;
+
+    opacity:.9;
+
+    letter-spacing:1px;
+
+}
+/* =====================================
+   SPECIAL DATE CINEMATIC SCENE
+===================================== */
+
+.special-date{
+
+    min-height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+    padding:40px 20px;
+
+    background:
+
+    radial-gradient(
+        circle at center,
+        #1b2735,
+        #050814 70%
+    );
+
+}
+
+
+.date-card{
+
+    max-width:800px;
+
+    padding:70px 50px;
+
+    border-radius:35px;
+
+    background:rgba(255,255,255,.08);
+
+    border:1px solid rgba(255,255,255,.15);
+
+    backdrop-filter:blur(20px);
+
+    box-shadow:
+
+    0 0 50px rgba(255,255,255,.15);
+
+}
+
+
+.date-small{
+
+    font-size:25px;
+
+    color:#ffe8a3;
+
+    letter-spacing:3px;
+
+    margin-bottom:35px;
+
+}
+
+
+.date-card h2{
+
+    font-size:75px;
+
+    color:white;
+
+    text-shadow:
+
+    0 0 20px white,
+    0 0 50px rgba(255,255,255,.5);
+
+    margin-bottom:40px;
+
+}
+
+
+.date-message{
+
+    font-size:28px;
+
+    line-height:1.8;
+
+    opacity:.9;
+
+}
+
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+    .date-card h2{
+
+        font-size:42px;
+
+    }
+
+
+    .date-message{
+
+        font-size:20px;
+
+    }
+
+}
+/* =====================================
+   CHAPTER TWO MOVIE TRANSITION
+===================================== */
+
+
+.chapter-two{
+
+    min-height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+    padding:40px 20px;
+
+    background:
+
+    radial-gradient(
+        circle at center,
+        #241b35,
+        #050814 75%
+    );
+
+}
+
+
+/* Hidden movie opening state */
+
+.chapter-two .chapter-card{
+
+    max-width:850px;
+
+    padding:70px 50px;
+
+    opacity:0;
+
+    filter:blur(20px);
+
+    transform:scale(1.15);
+
+    transition:
+
+    opacity 2.5s ease,
+
+    filter 2.5s ease,
+
+    transform 2.5s ease;
+
+}
+
+
+/* When visible */
+
+.chapter-two.visible .chapter-card{
+
+    opacity:1;
+
+    filter:blur(0);
+
+    transform:scale(1);
+
+}
+
+
+.chapter-card p{
+
+    font-size:26px;
+
+    color:#ffe8a3;
+
+    letter-spacing:4px;
+
+    margin-bottom:35px;
+
+}
+
+
+.chapter-card h2{
+
+    font-size:70px;
+
+    margin-bottom:35px;
+
+    text-shadow:
+
+    0 0 25px white;
+
+}
+
+
+.chapter-card h3{
+
+    font-size:28px;
+
+    font-weight:300;
+
+    opacity:.9;
+
+}
+
+
+
+@media(max-width:768px){
+
+    .chapter-card h2{
+
+        font-size:42px;
+
+    }
+
+
+    .chapter-card h3{
+
+        font-size:20px;
+
+    }
+
+}
+/* =====================================
+   TRUST GROWTH SCENE
+===================================== */
+
+
+.trust-scene{
+
+    min-height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    padding:50px 20px;
+
+}
+
+
+.trust-card{
+
+    max-width:850px;
+
+    padding:65px 50px;
+
+    text-align:center;
+
+    border-radius:35px;
+
+    background:rgba(255,255,255,.08);
+
+    border:1px solid rgba(255,255,255,.15);
+
+    backdrop-filter:blur(20px);
+
+    box-shadow:
+
+    0 0 50px rgba(255,255,255,.1);
+
+}
+
+
+.trust-card p:first-child{
+
+    color:#ffe8a3;
+
+    letter-spacing:4px;
+
+    font-size:24px;
+
+}
+
+
+.trust-card h2{
+
+    font-size:65px;
+
+    margin:35px 0;
+
+    text-shadow:0 0 25px white;
+
+}
+
+
+.trust-card p{
+
+    font-size:26px;
+
+    line-height:1.9;
+
+}
+
+
+@media(max-width:768px){
+
+    .trust-card h2{
+
+        font-size:40px;
+
+    }
+
+
+    .trust-card p{
+
+        font-size:20px;
+
+    }
+
+}
+/* =====================================
+   VIDEO MEMORY CARDS
+===================================== */
+
+
+.video-card{
+
+    background:white;
+
+    padding:20px;
+
+    border-radius:15px;
+
+    transform:rotate(3deg);
+
+    box-shadow:
+
+    0 20px 40px rgba(0,0,0,.5);
+
+    transition:.4s;
+
+}
+
+
+.video-card:hover{
+
+    transform:
+
+    translateY(-15px)
+
+    rotate(0deg)
+
+    scale(1.05);
+
+}
+
+
+.video-card video{
+
+    width:100%;
+
+    border-radius:10px;
+
+}
+
+
+.video-card p{
+
+    color:#111;
+
+    margin-top:20px;
+
+    font-size:20px;
+
+    font-weight:bold;
+
+}
+/* =====================================
+   GALLERY
+===================================== */
+
+.gallery{
+
+    min-height:100vh;
+
+    padding:100px 20px;
+
+    text-align:center;
+
+}
+
+.gallery-title{
+
+    max-width:900px;
+
+    margin:0 auto 70px;
+
+}
+
+.gallery-title p{
+
+    color:#ffe8a3;
+
+    letter-spacing:3px;
+
+    font-size:22px;
+
+}
+
+.gallery-title h2{
+
+    font-size:58px;
+
+    margin:25px 0;
+
+}
+
+.gallery-title h3{
+
+    font-size:24px;
+
+    opacity:.85;
+
+}
+
+
+/* GRID */
+
+.gallery-grid{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    justify-content:center;
+
+    align-items:flex-start;
+
+    gap:40px;
+
+}
+
+
+/* PHOTO & VIDEO */
+
+.photo-card,
+.video-card{
+
+    width:300px;
+
+    background:white;
+
+    padding:15px;
+
+    border-radius:18px;
+
+    box-shadow:0 15px 40px rgba(0,0,0,.45);
+
+    transition:.4s;
+
+}
+
+
+.photo-card:nth-child(odd){
+
+    transform:rotate(-3deg);
+
+}
+
+.photo-card:nth-child(even){
+
+    transform:rotate(3deg);
+
+}
+
+.video-card{
+
+    transform:rotate(-2deg);
+
+}
+
+
+.photo-card:hover,
+.video-card:hover{
+
+    transform:translateY(-12px) rotate(0deg) scale(1.03);
+
+}
+
+
+/* IMAGES */
+
+.photo-card{
+
+    width:300px;
+
+    margin:auto;
+
+}
+
+.photo-card img{
+
+    width:100%;
+
+    aspect-ratio:3/4;
+
+    object-fit:contain;
+
+    background:#111;
+
+    border-radius:10px;
+
+}
+
+
+/* VIDEOS */
+
+.video-card{
+
+    width:280px;
+
+    background:white;
+
+    padding:15px;
+
+    border-radius:15px;
+
+    box-shadow:
+        0 20px 45px rgba(0,0,0,.45);
+
+    transition:.5s;
+
+}
+
+.video-card video{
+
+    width:100%;
+
+    height:auto;
+
+    max-height:500px;
+
+    object-fit:contain;
+
+    display:block;
+
+    margin:auto;
+
+    background:black;
+
+    border-radius:10px;
+
+}
+
+.video-card:hover{
+
+    transform:
+        translateY(-15px)
+        scale(1.05);
+
+}
+
+
+/* CAPTIONS */
+
+.photo-card p,
+.video-card p{
+
+    color:#111;
+
+    font-size:18px;
+
+    margin-top:15px;
+
+    font-weight:bold;
+
+}
+
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+    .photo-card,
+    .video-card{
+
+        width:90%;
+
+    }
+
+}
+/* =====================================
+   CHAPTER THREE
+===================================== */
+
+.chapter-three{
+
+    min-height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    padding:40px;
+
+    text-align:center;
+
+    background:
+    radial-gradient(circle,#1d2745,#050814 80%);
+
+}
+
+.chapter-three-card{
+
+    max-width:850px;
+
+    opacity:0;
+
+    transform:translateY(60px);
+
+    filter:blur(18px);
+
+    transition:2s;
+
+}
+
+.chapter-three.visible .chapter-three-card{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+    filter:blur(0);
+
+}
+
+.chapter-number{
+
+    color:#ffe8a3;
+
+    font-size:24px;
+
+    letter-spacing:5px;
+
+    margin-bottom:35px;
+
+}
+
+.chapter-three h2{
+
+    font-size:72px;
+
+    margin-bottom:35px;
+
+    text-shadow:0 0 20px white;
+
+}
+
+.chapter-three h3{
+
+    font-size:30px;
+
+    line-height:1.8;
+
+    font-weight:300;
+
+}
+/* =====================================
+   MOVIE PAUSE
+===================================== */
+
+.movie-pause{
+
+    min-height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+    padding:40px;
+
+    position:relative;
+
+    z-index:2;
+
+}
+
+.pause-text{
+
+    max-width:900px;
+
+}
+
+.movie-pause.visible .pause-text{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+    filter:blur(0);
+
+}
+
+.line1{
+
+    font-size:32px;
+
+    color:#ffe8a3;
+
+    letter-spacing:3px;
+
+    margin-bottom:40px;
+
+    opacity:0;
+
+    filter:blur(15px);
+
+    transform:translateY(20px);
+
+}
+
+.line2{
+
+    font-size:72px;
+
+    font-weight:bold;
+
+    text-shadow:0 0 25px white;
+
+    line-height:1.3;
+
+    opacity:0;
+
+    filter:blur(18px);
+
+    transform:translateY(20px);
+
+}
+
+@media(max-width:768px){
+
+    .line2{
+
+        font-size:42px;
+
+    }
+
+    .line1{
+
+        font-size:22px;
+
+    }
+
+}
+.movie-pause.visible .line1{
+
+    animation:
+    fadeLine 2s forwards;
+
+}
+
+.movie-pause.visible .line2{
+
+    animation:
+    fadeLine 2s forwards;
+
+    animation-delay:2.4s;
+
+}
+
+@keyframes fadeLine{
+
+    from{
+
+        opacity:0;
+
+        filter:blur(18px);
+
+        transform:translateY(20px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        filter:blur(0);
+
+        transform:translateY(0);
+
+    }
+
+}
+.music-zone{
+
+    min-height:80vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+}
+.music-zone:first-of-type{
+    margin-top:150px;
+}
+/* ===============================
+   MUSIC OVERLAY
+================================ */
+
+#musicOverlay{
+
+    position:fixed;
+
+    inset:0;
+
+    background:rgba(0,0,0,.96);
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+    z-index:99999;
+
+    cursor:pointer;
+
+    transition:opacity 1.5s ease;
+
+}
+
+#musicOverlay.hide{
+
+    opacity:0;
+
+    pointer-events:none;
+
+}
+
+.overlay-content{
+
+    color:white;
+
+}
+
+.overlay-content h2{
+
+    font-size:55px;
+
+    margin-bottom:25px;
+
+    text-shadow:0 0 25px white;
+
+}
+
+.overlay-content p{
+
+    font-size:24px;
+
+    opacity:.85;
+
+    animation:pulse 2s infinite;
+
+}
+
+@keyframes pulse{
+
+    0%,100%{
+
+        opacity:.35;
+
+    }
+
+    50%{
+
+        opacity:1;
+
+    }
+
+}
+/* ================= FIREFLIES ================= */
+
+.fireflies{
+
+    position:fixed;
+
+    inset:0;
+
+    pointer-events:none;
+
+    overflow:hidden;
+
+    z-index:2;
+
+}
+
+.firefly{
+
+    position:absolute;
+
+    width:5px;
+
+    height:5px;
+
+    border-radius:50%;
+
+    background:white;
+
+    box-shadow:
+    0 0 8px white,
+    0 0 18px #ffeaa7,
+    0 0 35px #fff5cc;
+
+    opacity:0;
+
+    animation:firefly linear infinite;
+}
+
+@keyframes firefly{
+
+    0%{
+
+        transform:translateY(80px) scale(.3);
+
+        opacity:0;
+
+    }
+
+    15%{
+
+        opacity:.9;
+
+    }
+
+    85%{
+
+        opacity:.9;
+
+    }
+
+    100%{
+
+        transform:translateY(-120vh) translateX(40px) scale(1);
+
+        opacity:0;
+
+    }
+
+}
+/* =====================================
+   CHAPTER THREE MESSAGE MEMORIES
+===================================== */
+
+
+.messages-section{
+
+    min-height:100vh;
+
+    padding:100px 20px;
+
+    position:relative;
+
+    z-index:3;
+
+}
+
+
+
+.messages-title{
+
+    text-align:center;
+
+    max-width:850px;
+
+    margin:auto;
+
+}
+
+
+
+.messages-title p{
+
+    color:#ffe8a3;
+
+    letter-spacing:4px;
+
+    font-size:22px;
+
+}
+
+
+
+.messages-title h2{
+
+    font-size:60px;
+
+    margin:30px 0;
+
+    text-shadow:0 0 25px white;
+
+}
+
+
+
+.messages-title h3{
+
+    font-size:26px;
+
+    font-weight:300;
+
+    line-height:1.8;
+
+    opacity:.9;
+
+}
+
+
+
+
+/* MESSAGE CARD */
+
+
+.chat-memory{
+
+    max-width:850px;
+
+    margin:100px auto;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:50px;
+
+    opacity:0;
+
+    transform:translateY(70px);
+
+    transition:1.5s ease;
+
+}
+
+
+
+.chat-memory.visible{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+}
+
+
+
+.chat-memory img{
+
+    width:350px;
+
+    max-width:100%;
+
+    border-radius:25px;
+
+    box-shadow:
+
+    0 20px 60px rgba(0,0,0,.5);
+
+}
+
+
+
+.chat-text{
+
+    flex:1;
+
+}
+
+
+
+.message-bubble{
+
+    padding:20px;
+
+    margin:15px;
+
+    border-radius:25px;
+
+    font-size:20px;
+
+    line-height:1.5;
+
+    box-shadow:
+
+    0 10px 30px rgba(0,0,0,.3);
+
+}
+
+
+
+.her{
+
+    background:#222;
+
+    color:white;
+
+    text-align:left;
+
+}
+
+
+
+.me{
+
+    background:#ff8bb8;
+
+    color:white;
+
+    text-align:right;
+
+}
+
+
+
+.memory-caption{
+
+    margin-top:30px;
+
+    font-size:20px;
+
+    color:#ffe8a3;
+
+    font-style:italic;
+
+    line-height:1.7;
+
+}
+
+
+
+/* alternate sides */
+
+.reverse{
+
+    flex-direction:row-reverse;
+
+}
+
+
+
+/* MOBILE */
+
+
+@media(max-width:768px){
+
+
+.chat-memory,
+.reverse{
+
+    flex-direction:column;
+
+}
+
+
+
+.messages-title h2{
+
+    font-size:38px;
+
+}
+
+
+
+.messages-title h3{
+
+    font-size:20px;
+
+}
+
+
+}
+/* =====================================
+   CHAPTER THREE IMAGE MEMORIES
+===================================== */
+
+
+.story-memory{
+
+    min-height:100vh;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+    padding:80px 20px;
+
+    position:relative;
+
+    z-index:3;
+
+}
+
+
+/* CHAT IMAGE */
+
+
+.story-memory img{
+
+    width:420px;
+
+    max-width:90%;
+
+    border-radius:30px;
+
+    border:8px solid rgba(255,255,255,.8);
+
+    box-shadow:
+
+    0 0 40px rgba(255,255,255,.2),
+    0 30px 70px rgba(0,0,0,.6);
+
+    opacity:0;
+
+    transform:
+
+    translateY(80px)
+    scale(.9);
+
+    transition:1.5s ease;
+
+}
+
+
+
+/* TEXT */
+
+
+.story-caption{
+
+    margin-top:50px;
+
+    max-width:850px;
+
+}
+
+
+.story-caption p{
+
+    font-size:32px;
+
+    color:#ffe8a3;
+
+    letter-spacing:3px;
+
+    opacity:0;
+
+    transform:translateY(30px);
+
+    transition:1.2s ease;
+
+}
+
+
+.story-caption h2{
+
+    margin-top:30px;
+
+    font-size:65px;
+
+    line-height:1.3;
+
+    text-shadow:
+
+    0 0 25px white;
+
+    opacity:0;
+
+    transform:translateY(30px);
+
+    transition:1.2s ease;
+
+    transition-delay:.5s;
+
+}
+
+
+
+/* WHEN VISIBLE */
+
+
+.story-memory.visible img{
+
+    opacity:1;
+
+    transform:
+
+    translateY(0)
+    scale(1);
+
+}
+
+
+
+.story-memory.visible p{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+}
+
+
+
+.story-memory.visible h2{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+}
+
+
+
+/* MOBILE */
+
+
+@media(max-width:768px){
+
+
+.story-memory img{
+
+    width:90%;
+
+}
+
+
+.story-caption p{
+
+    font-size:22px;
+
+}
+
+
+.story-caption h2{
+
+    font-size:38px;
+
+}
+
+
+}
+/* =====================================
+   CHAPTER THREE IMAGE MEMORIES
+===================================== */
+
+.story-memory{
+
+    min-height:100vh;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+    padding:80px 20px;
+
+    opacity:0;
+
+    transform:translateY(80px);
+
+    transition:1.5s ease;
+
+}
+
+
+.story-memory.visible{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+}
+
+
+
+.story-memory img{
+
+    width:400px;
+
+    max-width:90%;
+
+    border-radius:25px;
+
+    box-shadow:
+    0 20px 60px rgba(0,0,0,.5);
+
+    margin-bottom:50px;
+
+}
+
+
+
+.story-caption p{
+
+    font-size:30px;
+
+    color:#ffe8a3;
+
+    letter-spacing:3px;
+
+    margin-bottom:25px;
+
+}
+
+
+
+.story-caption h2{
+
+    font-size:65px;
+
+    max-width:900px;
+
+    text-shadow:
+    0 0 25px white;
+
+}
+
+
+
+@media(max-width:768px){
+
+    .story-caption h2{
+
+        font-size:38px;
+
+    }
+
+
+    .story-caption p{
+
+        font-size:22px;
+
+    }
+
+}
+/* =====================================
+   GLASS HEADER FOR MESSAGE SECTION
+===================================== */
+
+.messages-header{
+
+    display:flex;
+    justify-content:center;
+    margin-bottom:90px;
+
+}
+
+.messages-title{
+
+    width:fit-content;
+    max-width:900px;
+
+    margin:auto;
+
+    padding:40px 70px;
+
+    text-align:center;
+
+    background:rgba(255,255,255,.04);
+
+    backdrop-filter:blur(12px);
+
+    -webkit-backdrop-filter:blur(12px);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:25px;
+
+}
+
+.messages-title p{
+
+    color:#ffe8a3;
+    letter-spacing:4px;
+    font-size:22px;
+
+}
+
+.messages-title h2{
+
+    font-size:58px;
+    margin:25px 0;
+    text-shadow:0 0 20px white;
+
+}
+
+.messages-title h3{
+
+    font-size:24px;
+    line-height:1.8;
+    font-weight:300;
+    opacity:.9;
+
+}
+
+@media(max-width:768px){
+
+    .messages-title{
+
+        padding:35px 25px;
+
+    }
+
+    .messages-title h2{
+
+        font-size:38px;
+
+    }
+
+    .messages-title h3{
+
+        font-size:20px;
+
+    }
+
+}
+/* =====================================
+   FINAL CINEMATIC ENDING
+===================================== */
+
+.final-ending{
+
+    min-height:100vh;
+
+    background:#000;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+    padding:40px;
+
+}
+
+#finalMessage{
+
+    color:white;
+
+    max-width:900px;
+
+    font-size:52px;
+
+    line-height:1.9;
+
+    white-space:pre-line;
+
+    letter-spacing:.5px;
+
+    text-shadow:
+        0 0 12px rgba(255,255,255,.15);
+
+}
+
+.cursor{
+
+    animation:blink 1s infinite;
+
+}
+
+.signature{
+
+    font-size:24px;
+
+    color:#888;
+
+    letter-spacing:2px;
+
+    opacity:.8;
+
+}
+
+@keyframes blink{
+
+    50%{
+
+        opacity:0;
+
+    }
+
+}
+
+@media(max-width:768px){
+
+    #finalMessage{
+
+        font-size:30px;
+
+        line-height:1.8;
+
+    }
+
+    .signature{
+
+        font-size:18px;
+
+    }
+
+}
+/* =====================================
+   FINAL MESSAGE
+===================================== */
+
+.final-scene{
+
+    min-height:100vh;
+
+    background:#000;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    overflow:hidden;
+
+}
+
+.final-message{
+
+    opacity:0;
+
+    transition:2s;
+
+}
+
+.final-scene.visible .final-message{
+
+    opacity:1;
+
+}
+
+.typing-bubble{
+
+    max-width:850px;
+
+    background:#075E54;
+
+    color:white;
+
+    padding:28px 35px;
+
+    border-radius:30px 30px 8px 30px;
+
+    font-size:34px;
+
+    line-height:1.8;
+
+    box-shadow:
+        0 25px 70px rgba(0,0,0,.6),
+        0 0 30px rgba(255,255,255,.08);
+
+}
+
+.message-time{
+
+    text-align:right;
+
+    margin-top:18px;
+
+    color:#bbbbbb;
+
+    font-size:18px;
+
+    letter-spacing:2px;
+
+}
+
+#typingMessage::after{
+
+    content:"|";
+
+    animation:blink .7s infinite;
+
+}
+
+@keyframes blink{
+
+    50%{
+
+        opacity:0;
+
+    }
+
+}
+
+@media(max-width:768px){
+
+    .typing-bubble{
+
+        font-size:22px;
+
+        padding:22px;
+
+    }
+
+}
+/* =====================================
+   CINEMATIC PHONE ENDING
+===================================== */
+
+.final-scene{
+
+    min-height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:
+    radial-gradient(circle,#02040d,#000);
+
+    overflow:hidden;
+
+    position:relative;
+
+}
+
+
+
+.phone-wrapper{
+
+    perspective:1400px;
+
+}
+
+
+
+.iphone{
+
+    width:330px;
+
+    height:670px;
+
+    border-radius:45px;
+
+    background:#111;
+
+    border:10px solid #222;
+
+    overflow:hidden;
+
+    position:relative;
+
+    box-shadow:
+    0 0 60px rgba(255,255,255,.08),
+    0 60px 120px rgba(0,0,0,.65);
+
+    transform:
+    translateY(-120vh)
+    rotate(-20deg);
+
+}
+
+
+
+.iphone.drop{
+
+    animation:
+    phoneDrop 2.8s
+    cubic-bezier(.2,.9,.2,1)
+    forwards;
+
+}
+
+
+
+@keyframes phoneDrop{
+
+0%{
+
+transform:
+translateY(-120vh)
+rotate(-20deg);
+
+}
+
+70%{
+
+transform:
+translateY(20px)
+rotate(4deg);
+
+}
+
+85%{
+
+transform:
+translateY(-10px)
+rotate(-2deg);
+
+}
+
+100%{
+
+transform:
+translateY(0)
+rotate(0);
+
+}
+
+}
+
+
+
+.lock-screen{
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+    linear-gradient(
+    180deg,
+    #2f4566,
+    #101522
+    );
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:flex-start;
+
+    align-items:center;
+
+    padding-top:50px;
+
+}
+
+
+
+.phone-time{
+
+    font-size:65px;
+
+    font-weight:200;
+
+    color:white;
+
+    margin-bottom:35px;
+
+}
+
+
+
+.notification-card{
+
+    width:90%;
+
+    background:
+
+    rgba(255,255,255,.18);
+
+    backdrop-filter:blur(15px);
+
+    border-radius:22px;
+
+    padding:18px;
+
+    opacity:0;
+
+    transform:translateY(-25px);
+
+}
+
+
+
+.notification-card.show{
+
+    animation:
+    notify .8s forwards;
+
+}
+
+
+
+@keyframes notify{
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
+
+
+
+.notif-app{
+
+font-size:14px;
+
+opacity:.8;
+
+margin-bottom:8px;
+
+}
+
+
+
+.notif-text{
+
+font-size:18px;
+
+font-weight:bold;
+
+}
+
+
+
+.notif-preview{
+
+margin-top:8px;
+
+font-size:16px;
+
+opacity:.85;
+
+}
+
+
+
+.instagram-screen{
+
+    position:absolute;
+
+    inset:0;
+
+    background:#fff;
+
+    color:#111;
+
+    opacity:0;
+
+    transform:scale(.95);
+
+}
+
+
+
+.instagram-screen.open{
+
+    animation:
+    openInstagram .8s forwards;
+
+}
+
+
+
+@keyframes openInstagram{
+
+to{
+
+opacity:1;
+
+transform:scale(1);
+
+}
+
+}
+
+
+
+.insta-header{
+
+height:70px;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+font-weight:bold;
+
+border-bottom:1px solid #ddd;
+
+font-size:20px;
+
+}
+
+
+
+.chat-area{
+
+padding:25px;
+
+height:500px;
+
+display:flex;
+
+align-items:flex-end;
+
+}
+
+
+
+.typing-bubble{
+
+background:#0095f6;
+
+color:white;
+
+padding:20px;
+
+border-radius:24px;
+
+font-size:22px;
+
+line-height:1.7;
+
+max-width:85%;
+
+}
+
+
+
+.cursor{
+
+animation:blink .7s infinite;
+
+}
+
+
+
+.send-area{
+
+height:100px;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+}
+
+
+
+#sendButton{
+
+padding:16px 40px;
+
+background:#0095f6;
+
+color:white;
+
+border:none;
+
+border-radius:30px;
+
+font-size:20px;
+
+cursor:pointer;
+
+transition:.4s;
+
+}
+
+
+
+#sendButton.sent{
+
+transform:scale(.9);
+
+opacity:.7;
+
+}
+
+
+
+@media(max-width:768px){
+
+.iphone{
+
+width:270px;
+
+height:560px;
+
+}
+
+.phone-time{
+
+font-size:52px;
+
+}
+
+.typing-bubble{
+
+font-size:18px;
+
+}
+
+}
+/* =====================================
+   PERFECT CINEMATIC PHONE ENDING
+===================================== */
+
+.final-scene{
+
+    min-height:100vh;
+    width:100%;
+
+    background:
+    radial-gradient(circle,#101522,#000);
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    position:relative;
+    overflow:hidden;
+
+}
+
+
+
+/* PHONE */
+
+#iphone{
+
+    width:360px;
+    height:740px;
+
+    max-width:90vw;
+    max-height:90vh;
+
+    background:#111;
+
+    border:10px solid #1c1c1c;
+
+    border-radius:50px;
+
+    overflow:hidden;
+
+    position:absolute;
+
+    top:-900px;
+
+    box-shadow:
+
+    0 40px 100px rgba(0,0,0,.8),
+    0 0 50px rgba(255,255,255,.1);
+
+}
+
+
+
+#iphone.drop{
+
+    animation:
+
+    phoneDrop 2.5s
+
+    cubic-bezier(.2,.9,.25,1)
+
+    forwards;
+
+}
+
+
+
+@keyframes phoneDrop{
+
+
+0%{
+
+top:-900px;
+
+transform:rotate(-25deg);
+
+}
+
+
+70%{
+
+top:80px;
+
+transform:rotate(5deg);
+
+}
+
+
+100%{
+
+top:50%;
+
+transform:
+
+translateY(-50%)
+
+rotate(0);
+
+}
+
+
+}
+
+
+
+/* LOCK SCREEN */
+
+#lockScreen{
+
+position:absolute;
+
+inset:0;
+
+background:
+
+linear-gradient(
+
+180deg,
+
+#283b58,
+
+#050505
+
+);
+
+
+display:flex;
+
+justify-content:flex-start;
+
+align-items:center;
+
+flex-direction:column;
+
+padding-top:70px;
+
+
+}
+
+
+
+.phone-time{
+
+font-size:70px;
+
+color:white;
+
+font-weight:200;
+
+}
+
+
+
+/* INSTAGRAM */
+
+#instagramScreen{
+
+position:absolute;
+
+inset:0;
+
+background:#fff;
+
+display:flex;
+
+flex-direction:column;
+
+opacity:0;
+
+transform:scale(.9);
+
+transition:1s;
+
+}
+
+
+
+#instagramScreen.open{
+
+opacity:1;
+
+transform:scale(1);
+
+}
+
+
+
+/* HEADER */
+
+.ig-header{
+
+height:65px;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+font-weight:bold;
+
+font-size:20px;
+
+border-bottom:1px solid #ddd;
+
+}
+
+
+
+/* CHAT */
+
+.chat-area{
+
+flex:1;
+
+padding:20px;
+
+overflow-y:auto;
+
+display:flex;
+
+flex-direction:column;
+
+gap:12px;
+
+background:#fafafa;
+
+}
+
+
+
+/* MY MESSAGE */
+
+.chat-message{
+
+max-width:80%;
+
+}
+
+
+
+.mine{
+
+align-self:flex-end;
+
+}
+
+
+
+.mine .bubble{
+
+background:#0095f6;
+
+color:white;
+
+padding:15px 20px;
+
+border-radius:25px 25px 5px 25px;
+
+font-size:18px;
+
+}
+
+
+
+/* HER MESSAGE */
+
+.her-message{
+
+align-self:flex-start;
+
+background:#e5e5ea;
+
+color:#111;
+
+padding:15px 20px;
+
+border-radius:25px 25px 25px 5px;
+
+max-width:80%;
+
+font-size:18px;
+
+}
+
+
+
+/* TIME */
+
+.time{
+
+font-size:11px;
+
+color:#888;
+
+display:block;
+
+margin-top:5px;
+
+}
+
+
+
+/* SEND AREA */
+
+.send-area{
+
+height:80px;
+
+display:flex;
+
+align-items:center;
+
+padding:10px;
+
+background:white;
+
+}
+
+
+
+/* =====================================
+   REPLY AREA INSIDE PHONE
+===================================== */
+
+
+#replyBox{
+
+    display:none;
+
+    position:absolute;
+
+    bottom:0;
+
+    left:0;
+
+    width:100%;
+
+    height:70px;
+
+    padding:10px;
+
+    background:white;
+
+    display:flex;
+
+    gap:8px;
+
+    z-index:100;
+
+}
+
+
+
+#replyInput{
+
+    flex:1;
+
+    border-radius:25px;
+
+    border:1px solid #ccc;
+
+    padding:10px 15px;
+
+    font-size:15px;
+
+}
+
+
+
+#replySend{
+
+    width:45px;
+
+    height:45px;
+
+    border-radius:50%;
+
+    border:none;
+
+    background:#ff4d88;
+
+    color:white;
+
+    font-size:18px;
+
+}
+
+
+
+/* TYPING */
+
+#typingIndicator{
+
+position:absolute;
+
+bottom:90px;
+
+left:20px;
+
+background:#e5e5ea;
+
+padding:10px 15px;
+
+border-radius:20px;
+
+color:#555;
+
+display:none;
+
+}
+
+
+#typingIndicator.show{
+
+display:block;
+
+}
+
+
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+
+#iphone{
+
+width:300px;
+
+height:620px;
+
+}
+
+
+.phone-time{
+
+font-size:55px;
+
+}
+
+
+}
+/* =====================================
+   HAND HOLDING PHONE
+===================================== */
+
+.hand{
+
+    position:absolute;
+
+    bottom:-100px;
+
+    width:430px;
+
+    height:230px;
+
+    background:
+    linear-gradient(
+    #f2c7a1,
+    #d89a73
+    );
+
+    border-radius:
+
+    140px 140px 30px 30px;
+
+    opacity:0;
+
+    transform:translateY(150px);
+
+    transition:1.5s ease;
+
+    z-index:1;
+
+}
+
+
+
+.hand.show{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+}
+/* =====================================
+   ULTIMATE ENDING
+===================================== */
+
+
+.ultimate-ending{
+
+    position:fixed;
+
+    inset:0;
+
+    background:black;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    opacity:0;
+
+    pointer-events:none;
+
+    z-index:999999;
+
+    transition:3s ease;
+
+}
+
+
+
+.ultimate-ending.show{
+
+    opacity:1;
+
+}
+
+
+
+#endingText{
+
+    color:white;
+
+    max-width:850px;
+
+    text-align:center;
+
+    font-size:45px;
+
+    line-height:1.8;
+
+    text-shadow:
+
+    0 0 20px rgba(255,255,255,.5);
+
+    padding:30px;
+
+}
+
+
+
+@media(max-width:768px){
+
+
+#endingText{
+
+    font-size:28px;
+
+}
+
+
+}
+/* ================================
+   INSTAGRAM REALISTIC HEADER
+================================ */
+
+
+.ig-header{
+
+    height:75px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:15px;
+
+    background:white;
+
+    border-bottom:1px solid #ddd;
+
+}
+
+
+.profile-pic{
+
+    width:45px;
+
+    height:45px;
+
+    border-radius:50%;
+
+    object-fit:cover;
+
+}
+
+
+.profile-info{
+
+    display:flex;
+
+    flex-direction:column;
+
+    text-align:left;
+
+}
+
+
+.profile-info strong{
+
+    font-size:17px;
+
+}
+
+
+.profile-info span{
+
+    font-size:13px;
+
+    color:#777;
+
+}
+
+
+
+/* Seen text */
+
+.seen{
+
+    font-size:12px;
+
+    color:#888;
+
+    margin-top:5px;
+
+}
+
+
+
+/* Heart reaction */
+
+.heart-reaction{
+
+    position:absolute;
+
+    right:10px;
+
+    bottom:-15px;
+
+    background:white;
+
+    border-radius:50%;
+
+    padding:8px;
+
+    font-size:22px;
+
+    animation:heartPop .6s ease;
+
+}
+
+
+
+@keyframes heartPop{
+
+
+0%{
+
+transform:scale(0);
+
+}
+
+
+70%{
+
+transform:scale(1.3);
+
+}
+
+
+100%{
+
+transform:scale(1);
+
+}
+
+
+}
+.ig-header{
+
+    display:flex;
+    align-items:center;
+    gap:12px;
+
+    padding:15px;
+
+    background:#111;
+
+    border-bottom:1px solid rgba(255,255,255,.2);
+
+}
+
+
+.profile-pic{
+
+    width:42px;
+    height:42px;
+
+    border-radius:50%;
+
+    background:#ff6fa5;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    font-size:20px;
+
+}
+
+
+.ig-name{
+
+    display:flex;
+    flex-direction:column;
+
+}
+
+
+.ig-name strong{
+
+    color:white;
+
+    font-size:16px;
+
+}
+
+
+.ig-name span{
+
+    color:#aaa;
+
+    font-size:13px;
+
+}
