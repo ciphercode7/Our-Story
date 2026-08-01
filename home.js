@@ -84,16 +84,15 @@ let started = false;
 
 if(overlay && music){
 
-    overlay.addEventListener("click",()=>{
+    let audioUnlocked = false;
 
-        overlay.classList.add("hide");
+overlay.addEventListener("click", () => {
 
-        music.volume = 0;
+    overlay.classList.add("hide");
 
-        music.play()
-        .catch(()=>{});
+    audioUnlocked = true;
 
-    });
+});
 
 }
 
@@ -114,14 +113,21 @@ window.addEventListener("scroll",()=>{
 
 
     if(!started &&
-    chapterRect.top < window.innerHeight * .8){
+chapterRect.top < window.innerHeight * 0.8){
 
+    started = true;
 
-        started=true;
+    if(audioUnlocked){
 
+        music.volume = 0;
 
-        let fade=setInterval(()=>{
+        music.currentTime = 0;
 
+        music.play().catch(()=>{});
+
+    }
+
+    let fade = setInterval(()=>{
 
             if(music.volume < .15){
 
