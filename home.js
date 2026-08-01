@@ -287,7 +287,7 @@ document.getElementById("sendButton");
 
 
 const notification =
-document.getElementById("notification");
+document.getElementById("notificationsound");
 
 
 const typingSound =
